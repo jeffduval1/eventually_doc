@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventually - Documentation interactive</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body>
   <h1>📁 Documentation Interactive - Eventually</h1>
   <div class="section">
     <h2>1. Fiches d’index rapides</h2>
-  
+
     <details>
-      <summary>📁 Liste des dossiers et fichiers du projet</summary>
+      <summary>📁 Arborescence du projet</summary>
       <ul>
         <li>/.vscode/</li>
         <li>/modules/
           <ul>
             <li>/db/</li>
-            <ul><li>IndexedDB.js</li></ul>
+            <ul>
+              <li>IndexedDB.js</li>
+            </ul>
             <li>/utils/</li>
-            <ul><li>helpers.js</li></ul>
+            <ul>
+              <li>helpers.js</li>
+            </ul>
             <li>cartes.js</li>
             <li>categories.js</li>
             <li>config.js</li>
@@ -53,45 +59,191 @@
         <li>todo.md</li>
       </ul>
     </details>
-  
+
     <details>
       <summary>🧠 Liste des fonctions (avec fichier associé)</summary>
+
+      <li>main.js</li>
       <ul>
-        <li><strong>cartes.js</strong>
+        <li><code>document.addEventListener("DOMContentLoaded", ...)</code> (x2)</li>
+        <li><code>document.addEventListener("click", ...)</code> (x3)</li>
+        <li><code>addEventListener("click", ...)</code> (x10+)</li>
+        <li><code>boutonOuvrirConfirmation.addEventListener("click", ...)</code></li>
+        <li><code>annulerSuppressionCarteBtn.addEventListener("click", ...)</code></li>
+      </ul>
+      <li>cartes.js</li>
+      <ul>
+        <li><code>afficherCartes</code></li>
+        <li><code>afficherCartesFiltres</code></li>
+        <li><code>ajouterCarte</code></li>
+        <li><code>ouvrirModaleModification</code></li>
+        <li><code>setCarteASupprimer</code></li>
+        <li><code>getCarteASupprimer</code></li>
+
+      </ul>
+      <li>categories.js</li>
+      <!-- 🧠 Variables d’état -->
+      <ul>
+        <li><code>idCategorieActuelle</code></li>
+        <li><code>getIdCategorieActuelle</code></li>
+        <li><code>divMessageCliquerCarte</code></li>
+        <li><code>messageCliquerCarte</code></li>
+        <li><code>categorieEnCoursDeModification</code></li>
+        <li><code>categorieEnCoursDeCouleur</code></li>
+      </ul>
+
+      <!-- 🧩 Fonctions -->
+      <ul>
+        <li><code>setIdCategorieActuelle()</code></li>
+        <li><code>afficherVueParCategories()</code></li>
+        <li><code>afficherGestionCategories()</code></li>
+        <li><code>creerBlocCategorie()</code></li>
+        <li><code>afficherCartesParCategorie()</code></li>
+        <li><code>creerNouvelleCategorie()</code></li>
+        <li><code>chargerMenuCategories()</code></li>
+        <li><code>lancerEditionCategorie()</code></li>
+        <li><code>supprimerCategorie()</code></li>
+        <li><code>lancerModificationCouleur()</code></li>
+        <li><code>reinitialiserFormulaireNouvelleCategorie()</code></li>
+      </ul>
+
+      <!-- ⚠️ Callbacks anonymes -->
+      <ul>
+        <li><code>addEventListener("click")</code> callback – pour création ou modification (nom non précisé)</li>
+        <li><code>addEventListener("click")</code> callback – probablement lié à couleur</li>
+        <li><code>addEventListener("click")</code> callback – bouton ou icône de confirmation ?</li>
+      </ul>
+
+      <li>config.js</li>
+      <!-- 🎨 Variables d’état (palette.js / palettesData.js) -->
+      <ul>
+        <li><code>palettes</code></li>
+        <li><code>nomsCouleursParPalette</code></li>
+        <li><code>paletteActuelle</code></li>
+      </ul>
+
+      <!-- 🎨 Fonctions de gestion de palette -->
+      <ul>
+        <li><code>setPaletteActuelle()</code></li>
+        <li><code>getPaletteActuelle()</code></li>
+        <li><code>getCouleursDisponibles()</code></li>
+        <li><code>getNomCouleur()</code></li>
+      </ul>
+
+      <li>corbeille.js</li>
+      <ul>
+        <li><code>afficherCorbeille()</code></li>
+        <li><code>restaurerCarte()</code></li>
+        <li><code>viderCorbeille()</code></li>
+        <li><code>fermerCorbeille()</code></li>
+      </ul>
+
+      <li>filters.js</li>
+      <ul>
+        <li><code>tagsFiltres</code></li>
+        <li><code>modeTri</code></li>
+        <li><code>changerTri()</code></li>
+        <li><code>filtrerParTag()</code></li>
+        <li><code>filtrerParTagsMultiples()</code></li>
+        <li><code>filtrerCartesParTexte()</code></li>
+        <li><code>reinitialiserFiltre()</code></li>
+        <li><code>mettreAJourEtiquettes()</code></li>
+        <li><code>retirerEtiquette()</code></li>
+      </ul>
+      <ul>
+        <li><code>tagsFiltres</code></li>
+        <li><code>modeTri</code></li>
+      </ul>
+      <li>modification.js</li>
+      <ul>
+        <li><code>modifierCarteInline()</code></li>
+        <li><code>enregistrerModificationInline()</code></li>
+      </ul>
+      <li>palette.js</li>
+      <ul>
+        <li><code>appliquerPaletteGlobale()</code></li>
+        <li><code>ouvrirModalePalette()</code></li>
+        <li><code>corrigerCouleursExistantes()</code></li>
+        <li><code>corrigerCouleursCartesExistantes()</code></li>
+      </ul>
+      <ul>
+        <li><code>db</code></li>
+
+      </ul>
+      <li>palettesData.js</li>
+      <ul>
+        <li><code>royalDuskPalette</code></li>
+        <li><code>carnavalElectriquePalette</code></li>
+        <li><code>honeyLuxePalette</code></li>
+        <li><code>solsticeClairPalette</code></li>
+        <li><code>terraFortePalette</code></li>
+        <li><code>eclatsFruitesPalette</code></li>
+        <li><code>sunsetBloomPalette</code></li>
+        <li><code>melodieNocturnePalette</code></li>
+        <li><code>vintageBooksPalette</code></li>
+        <li><code>jeffPalette</code></li>
+      </ul>
+      <li>ui.js</li>
+      <ul>
+        <li><code>setupUI</code></li>
+        <li><code>currentMode</code></li>
+        <li><code>changerModeAffichage</code></li>
+        <li><code>afficherCorbeille</code></li>
+        <li><code>fermerCorbeille</code></li>
+        <li><code>viderCorbeille</code></li>
+        <li><code>initialiserMenuHamburger</code></li>
+        <li><code>reinitialiserFormulaireCategorie</code></li>
+        <li><code>ouvrirModale</code></li>
+        <li><code>fermerModale</code></li>
+        <li><code>ouvrirModaleAjoutCarte</code></li>
+        <li><code>preparerModalePourNouvelleCarte</code></li>
+      </ul>
+      <ul>
+        <li><code>currentMode</code></li>
+      </ul>
+      <li>uiCategories.js</li>
+      <ul>
+        <li><code>mettreAJourResumeCategorie</code></li>
+      </ul>
+      <li>/DB>
+        <ul>
+          <li>indexedDB.js</li>
           <ul>
-            <li>ajouterCarte()</li>
-            <li>modifierCarte()</li>
-            <li>supprimerCarte()</li>
-            <li>restaurerCarte()</li>
+            <li><code>ouvrirDB</code></li>
+            <li><code>importerCategories</code></li>
+            <li><code>getCategories</code></li>
+            <li><code>getCategorieByNom</code></li>
+            <li><code>getCartes</code></li>
+            <li><code>getCarteById</code></li>
+            <li><code>ajouterCategorie</code></li>
+            <li><code>ajouterCarte</code></li>
+            <li><code>modifierCategorie</code></li>
+            <li><code>modifierCarte</code></li>
+            <li><code>supprimerCategorie</code></li>
+            <li><code>supprimerCarte</code></li>
+            <li><code>exporterCartes</code></li>
+            <li><code>importerCartes</code></li>
+            <li><code>lireStore</code></li>
+            <li><code>lireParCle</code></li>
+            <li><code>ecrireDansStore</code></li>
+            <li><code>supprimerDansStore</code></li>
+            <li><code>deplacerCarteDansCorbeille</code></li>
+
           </ul>
-        </li>
-        <li><strong>ui.js</strong>
+        </ul>
+      <li><strong>/utils</strong>
+        <ul>
+          <li>helpers.js</li>
           <ul>
-            <li>afficherCartes()</li>
-            <li>afficherVueCategorie()</li>
-            <li>afficherCorbeille()</li>
-            <li>fermerToutesModales()</li>
+            <li><code>getTextColor</code></li>
+            <li><code>rgbToHex</code></li>
+            <li><code>getNomCouleur</code></li>
           </ul>
-        </li>
-        <li><strong>main.js</strong>
-          <ul>
-            <li>initialiserEvenements()</li>
-            <li>chargerDonnees()</li>
-          </ul>
-        </li>
-        <li><strong>categories.js</strong>
-          <ul>
-            <li>afficherCategories()</li>
-            <li>creerNouvelleCategorie()</li>
-            <li>modifierCategorie()</li>
-          </ul>
-        </li>
-        <li><strong>palette.js</strong>
-          <ul>
-            <li>genererPalette()</li>
-            <li>appliquerCouleurCategorie()</li>
-          </ul>
-        </li>
+        </ul>
+
+
+        </ul>
+      </li>
       </ul>
     </details>
   </div>
@@ -99,355 +251,557 @@
     <h2>2. Vue par composante</h2>
     <h3>🟩 COMPOSANTES MAJEURES</h3>
     <h3>📝 Cartes</h3>
-<!-- Carte individuelle -->
-<details><summary>🟦 Carte individuelle</summary>
-  <div class="checkboxes">
-    <label><input type="checkbox"> À revoir</label>
-    <label><input type="checkbox"> Terminé</label>
-  </div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">cartes.js</div>
-  <div class="fichier-ref">ui.js</div>
-  <div class="fichier-ref">cartes.css</div>
-  <p><strong>Commentaires :</strong></p>
-  <textarea rows="3"></textarea>
-  <details class="code-block">
-    <summary>📄 Code</summary>
-    <textarea rows="8" placeholder="Coller ici le code JS/HTML/CSS associé à cette composante..."></textarea>
-  </details>
-</details>
+    <!-- Carte individuelle -->
+    <details>
+      <summary>🟦 Carte individuelle</summary>
+      <div class="checkboxes">
+        <label><input type="checkbox"> À revoir</label>
+        <label><input type="checkbox"> Terminé</label>
+      </div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">cartes.css</div>
+      <p><strong>Commentaires :</strong></p>
+      <textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary>
+        <textarea rows="8" placeholder="Coller ici le code JS/HTML/CSS associé à cette composante..."></textarea>
+      </details>
+    </details>
 
-<!-- Comportement clic / modif / suppr -->
-<details><summary>🔃 Comportement au clic / modification / suppression</summary>
-  <div class="checkboxes">
-    <label><input type="checkbox"> À revoir</label>
-    <label><input type="checkbox"> Terminé</label>
-  </div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">cartes.js</div>
-  <div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p>
-  <textarea rows="3"></textarea>
-  <details class="code-block">
-    <summary>📄 Code</summary>
-    <textarea rows="8" placeholder="Coller ici le code JS/HTML/CSS associé à cette composante..."></textarea>
-  </details>
-</details>
+    <!-- Comportement clic / modif / suppr -->
+    <details>
+      <summary>🔃 Comportement au clic / modification / suppression</summary>
+      <div class="checkboxes">
+        <label><input type="checkbox"> À revoir</label>
+        <label><input type="checkbox"> Terminé</label>
+      </div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p>
+      <textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary>
+        <textarea rows="8" placeholder="Coller ici le code JS/HTML/CSS associé à cette composante..."></textarea>
+      </details>
+    </details>
 
-<!-- Tags / Couleur de la carte -->
-<details><summary>🏷️ Tags / Couleur de la carte</summary>
-  <div class="checkboxes">
-    <label><input type="checkbox"> À revoir</label>
-    <label><input type="checkbox"> Terminé</label>
-  </div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">cartes.js</div>
-  <div class="fichier-ref">ui.js</div>
-  <div class="fichier-ref">cartes.css</div>
-  <p><strong>Commentaires :</strong></p>
-  <textarea rows="3"></textarea>
-  <details class="code-block">
-    <summary>📄 Code</summary>
-    <textarea rows="8" placeholder="Coller ici le code JS/HTML/CSS associé à cette composante..."></textarea>
-  </details>
-</details>
+    <!-- Tags / Couleur de la carte -->
+    <details>
+      <summary>🏷️ Tags / Couleur de la carte</summary>
+      <div class="checkboxes">
+        <label><input type="checkbox"> À revoir</label>
+        <label><input type="checkbox"> Terminé</label>
+      </div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">cartes.css</div>
+      <p><strong>Commentaires :</strong></p>
+      <textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary>
+        <textarea rows="8" placeholder="Coller ici le code JS/HTML/CSS associé à cette composante..."></textarea>
+      </details>
+    </details>
 
-<!-- Affichage conditionnel -->
-<details><summary>👁️ Affichage conditionnel (filtre, catégorie active, etc.)</summary>
-  <div class="checkboxes">
-    <label><input type="checkbox"> À revoir</label>
-    <label><input type="checkbox"> Terminé</label>
-  </div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">ui.js</div>
-  <div class="fichier-ref">main.js</div>
-  <p><strong>Commentaires :</strong></p>
-  <textarea rows="3"></textarea>
-  <details class="code-block">
-    <summary>📄 Code</summary>
-    <textarea rows="8" placeholder="Coller ici le code JS/HTML/CSS associé à cette composante..."></textarea>
-  </details>
-</details>
-<h3>🧾 Modales</h3>
+    <!-- Affichage conditionnel -->
+    <details>
+      <summary>👁️ Affichage conditionnel (filtre, catégorie active, etc.)</summary>
+      <div class="checkboxes">
+        <label><input type="checkbox"> À revoir</label>
+        <label><input type="checkbox"> Terminé</label>
+      </div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">main.js</div>
+      <p><strong>Commentaires :</strong></p>
+      <textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary>
+        <textarea rows="8" placeholder="Coller ici le code JS/HTML/CSS associé à cette composante..."></textarea>
+      </details>
+    </details>
+    <h3>🧾 Modales</h3>
 
-<details><summary>➕ Modale de création de carte</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">main.js</div><div class="fichier-ref">cartes.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">modales.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>➕ Modale de création de carte</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">modales.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>📝 Modale de modification de carte</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">cartes.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>📝 Modale de modification de carte</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🎨 Modale de création de catégorie</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">categories.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">modales.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🎨 Modale de création de catégorie</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">categories.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">modales.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🧭 Modale de choix de type de catégorie</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">categories.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🧭 Modale de choix de type de catégorie</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">categories.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🧩 Modale de gestion (import/export)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">indexedDB.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🧩 Modale de gestion (import/export)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">indexedDB.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🗑️ Modale de la corbeille</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">corbeille.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🗑️ Modale de la corbeille</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">corbeille.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>📑 Modale de visualisation d’une carte</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">modales.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
-<h3>🗂 Catégories</h3>
+    <details>
+      <summary>📑 Modale de visualisation d’une carte</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">modales.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
+    <h3>🗂 Catégories</h3>
 
-<details><summary>📁 Affichage des catégories principales / enfants</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">categories.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">index.html</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>📁 Affichage des catégories principales / enfants</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">categories.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">index.html</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>➕ Ajout / édition / suppression de catégorie</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">categories.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">modales.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>➕ Ajout / édition / suppression de catégorie</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">categories.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">modales.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🎨 Couleur des catégories (héritée ou personnalisée)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">categories.js</div><div class="fichier-ref">palettesData.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🎨 Couleur des catégories (héritée ou personnalisée)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">categories.js</div>
+      <div class="fichier-ref">palettesData.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>📌 Choix d'une catégorie parent</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">categories.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">main.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>📌 Choix d'une catégorie parent</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">categories.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">main.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<h3>🗑 Corbeille</h3>
+    <h3>🗑 Corbeille</h3>
 
-<details><summary>📦 Affichage des cartes supprimées</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">corbeille.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">index.html</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>📦 Affichage des cartes supprimées</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">corbeille.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">index.html</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🔁 Restauration / suppression définitive</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">corbeille.js</div><div class="fichier-ref">indexedDB.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🔁 Restauration / suppression définitive</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">corbeille.js</div>
+      <div class="fichier-ref">indexedDB.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🔄 Affichage différencié / filtrage</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">corbeille.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">corbeille.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🔄 Affichage différencié / filtrage</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">corbeille.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">corbeille.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<h3>🟨 INTERFACE & NAVIGATION</h3>
+    <h3>🟨 INTERFACE & NAVIGATION</h3>
 
-<details><summary>🍔 Menu hamburger</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">main.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🍔 Menu hamburger</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🟨 Boutons "Par catégories / Par cartes"</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">main.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🟨 Boutons "Par catégories / Par cartes"</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🧭 Navigation mobile vs desktop (adaptatif)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">main.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">index.html</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
-<h3>📐 Layout / Structure</h3>
+    <details>
+      <summary>🧭 Navigation mobile vs desktop (adaptatif)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">index.html</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
+    <h3>📐 Layout / Structure</h3>
 
-<details><summary>🔀 Double panneau (catégories + cartes)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">main.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">disposition.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🔀 Double panneau (catégories + cartes)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">disposition.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>📱 Vue dédiée en mobile</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">index.html</div><div class="fichier-ref">main.js</div><div class="fichier-ref">disposition.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>📱 Vue dédiée en mobile</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">index.html</div>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">disposition.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🪟 Comportement responsive</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">disposition.css</div><div class="fichier-ref">mediaqueries.css</div><div class="fichier-ref">index.html</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🪟 Comportement responsive</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">disposition.css</div>
+      <div class="fichier-ref">mediaqueries.css</div>
+      <div class="fichier-ref">index.html</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<h3>🎨 Styles & Visuels</h3>
+    <h3>🎨 Styles & Visuels</h3>
 
-<details><summary>🎨 Palette de couleurs (sélection, aperçu, application dynamique)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">palette.js</div><div class="fichier-ref">palettesData.js</div><div class="fichier-ref">index.html</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🎨 Palette de couleurs (sélection, aperçu, application dynamique)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">palette.js</div>
+      <div class="fichier-ref">palettesData.js</div>
+      <div class="fichier-ref">index.html</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🖌️ Styles dynamiques (ex. : couleur de fond selon catégorie)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">ui.js</div><div class="fichier-ref">cartes.js</div><div class="fichier-ref">cartes.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🖌️ Styles dynamiques (ex. : couleur de fond selon catégorie)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">cartes.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🔖 Tags visuels (avec couleurs)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">cartes.js</div><div class="fichier-ref">ui.js</div><div class="fichier-ref">cartes.css</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🔖 Tags visuels (avec couleurs)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">cartes.css</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>📚 Charte graphique intégrée (si applicable)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">styles.css</div><div class="fichier-ref">palette.js</div><div class="fichier-ref">index.html</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>📚 Charte graphique intégrée (si applicable)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">styles.css</div>
+      <div class="fichier-ref">palette.js</div>
+      <div class="fichier-ref">index.html</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<h3>🧠 Mécaniques fonctionnelles</h3>
+    <h3>🧠 Mécaniques fonctionnelles</h3>
 
-<details><summary>🧠 Chargement depuis IndexedDB</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">indexedDB.js</div><div class="fichier-ref">main.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🧠 Chargement depuis IndexedDB</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">indexedDB.js</div>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>💾 Sauvegarde / mise à jour / suppression</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">indexedDB.js</div><div class="fichier-ref">cartes.js</div><div class="fichier-ref">categories.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>💾 Sauvegarde / mise à jour / suppression</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">indexedDB.js</div>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">categories.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>📥 Import/export (fichiers .json, .zip, etc.)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">indexedDB.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>📥 Import/export (fichiers .json, .zip, etc.)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">indexedDB.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🔄 Synchronisation UI / base de données</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">ui.js</div><div class="fichier-ref">main.js</div><div class="fichier-ref">indexedDB.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🔄 Synchronisation UI / base de données</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">indexedDB.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🕹️ Gestion de l’état global</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">main.js</div><div class="fichier-ref">ui.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🕹️ Gestion de l’état global</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">main.js</div>
+      <div class="fichier-ref">ui.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
 
-<h3>🧰 Utilitaires techniques</h3>
+    <h3>🧰 Utilitaires techniques</h3>
 
-<details><summary>🕶️ Masquage / affichage de sections dynamiquement</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">ui.js</div><div class="fichier-ref">main.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🕶️ Masquage / affichage de sections dynamiquement</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">main.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🧪 Logiques de validation</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">cartes.js</div><div class="fichier-ref">categories.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🧪 Logiques de validation</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">categories.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🎯 Rappel de focus / scroll vers élément (modif carte)</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">ui.js</div><div class="fichier-ref">cartes.js</div><div class="fichier-ref">main.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🎯 Rappel de focus / scroll vers élément (modif carte)</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">cartes.js</div>
+      <div class="fichier-ref">main.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
 
-<details><summary>🧭 Historique de navigation / retour sur dernière carte vue</summary>
-  <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox"> Terminé</label></div>
-  <p><strong>Fichiers impliqués :</strong></p>
-  <div class="fichier-ref">ui.js</div><div class="fichier-ref">main.js</div>
-  <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
-  <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
-</details>
+    <details>
+      <summary>🧭 Historique de navigation / retour sur dernière carte vue</summary>
+      <div class="checkboxes"><label><input type="checkbox"> À revoir</label><label><input type="checkbox">
+          Terminé</label></div>
+      <p><strong>Fichiers impliqués :</strong></p>
+      <div class="fichier-ref">ui.js</div>
+      <div class="fichier-ref">main.js</div>
+      <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
+      <details class="code-block">
+        <summary>📄 Code</summary><textarea rows="8"></textarea>
+      </details>
+    </details>
   </div>
 
   <script type="module" src="js/main.js" defer></script>
 </body>
+
 </html>
