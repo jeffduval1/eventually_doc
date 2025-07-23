@@ -9,9 +9,78 @@
 </head>
 <body>
   <h1>📁 Documentation Interactive - Eventually</h1>
-
   <div class="section">
-    <h2>1. Vue par composante</h2>
+    <h2>1. Fiches d’index rapides</h2>
+  
+    <details>
+      <summary>📁 Liste des dossiers et fichiers du projet</summary>
+      <ul>
+        <li>/index.html</li>
+        <li>/styles.css</li>
+        <li>/js/
+          <ul>
+            <li>main.js</li>
+            <li>cartes.js</li>
+            <li>categories.js</li>
+            <li>ui.js</li>
+            <li>corbeille.js</li>
+            <li>palette.js</li>
+            <li>palettesData.js</li>
+            <li>indexedDB.js</li>
+          </ul>
+        </li>
+        <li>/assets/
+          <ul>
+            <li>icones/</li>
+            <li>images/</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+  
+    <details>
+      <summary>🧠 Liste des fonctions (avec fichier associé)</summary>
+      <ul>
+        <li><strong>cartes.js</strong>
+          <ul>
+            <li>ajouterCarte()</li>
+            <li>modifierCarte()</li>
+            <li>supprimerCarte()</li>
+            <li>restaurerCarte()</li>
+          </ul>
+        </li>
+        <li><strong>ui.js</strong>
+          <ul>
+            <li>afficherCartes()</li>
+            <li>afficherVueCategorie()</li>
+            <li>afficherCorbeille()</li>
+            <li>fermerToutesModales()</li>
+          </ul>
+        </li>
+        <li><strong>main.js</strong>
+          <ul>
+            <li>initialiserEvenements()</li>
+            <li>chargerDonnees()</li>
+          </ul>
+        </li>
+        <li><strong>categories.js</strong>
+          <ul>
+            <li>afficherCategories()</li>
+            <li>creerNouvelleCategorie()</li>
+            <li>modifierCategorie()</li>
+          </ul>
+        </li>
+        <li><strong>palette.js</strong>
+          <ul>
+            <li>genererPalette()</li>
+            <li>appliquerCouleurCategorie()</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+  </div>
+  <div class="section">
+    <h2>2. Vue par composante</h2>
     <h3>🟩 COMPOSANTES MAJEURES</h3>
     <h3>📝 Cartes</h3>
 <!-- Carte individuelle -->
@@ -361,49 +430,8 @@
   <p><strong>Commentaires :</strong></p><textarea rows="3"></textarea>
   <details class="code-block"><summary>📄 Code</summary><textarea rows="8"></textarea></details>
 </details>
-
-
-
-
-
-
   </div>
 
-  <div class="section">
-    <h2>2. Vue par fichier</h2>
-    <details>
-      <summary>📄 ui.js</summary>
-      <div class="checkboxes">
-        <label><input type="checkbox"> À revoir</label>
-        <label><input type="checkbox"> Terminé</label>
-      </div>
-      <p><strong>Composantes affectées :</strong></p>
-      <div class="composante-ref">Modale de création de carte</div>
-      <div class="composante-ref">Vue par catégories</div>
-      <p><strong>Commentaires :</strong></p>
-      <textarea rows="4" placeholder="Fonctions principales, à surveiller, améliorations à venir..."></textarea>
-    </details>
-  </div>
-
-  <div class="section">
-    <h2>3. Fiches d’index rapides</h2>
-    <p><strong>Liste des fichiers JS :</strong></p>
-    <textarea rows="6" placeholder="cartes.js\ncategories.js\nui.js\n..."></textarea>
-
-    <p><strong>Liste des fonctions et fichiers associés :</strong></p>
-    <textarea rows="6" placeholder="afficherCartes() → ui.js\najouterCarte() → cartes.js\n..."></textarea>
-  </div>
-
-  <div class="section">
-    <h2>4. Bibliothèque de composantes réutilisables</h2>
-    <p>Chaque composante listée ici pourra être exportée vers d'autres projets.</p>
-    <details>
-      <summary>📦 Carte simple (avec tags + couleur)</summary>
-      <p><strong>Projets utilisés :</strong> Eventually</p>
-      <p><strong>Technos :</strong> HTML, CSS (cartes.css), JS (cartes.js)</p>
-      <textarea rows="4" placeholder="Récapitulatif, variations possibles, adaptations..."></textarea>
-    </details>
-  </div>
   <script type="module" src="js/main.js" defer></script>
 </body>
 </html>
