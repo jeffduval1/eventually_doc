@@ -1,0 +1,91 @@
+:root {
+    --couleur-principale: #1C2D49;
+    --couleur-fond: #F5F7FA;
+    --couleur-accent: #FFC300;
+    --couleur-secondaire: #E0E4EC;
+    --couleur-texte: #1C2D49;
+    --rayon: 8px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    line-height: 1.6;
+  }
+  h1, h2 {
+    margin-top: 2rem;
+    color: var(--couleur-principale);
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--couleur-accent);
+    padding-bottom: 0.3rem;
+  }
+  summary {
+    cursor: pointer;
+    padding: 1rem;
+    background-color: var(--couleur-secondaire);
+    border-radius: var(--rayon);
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+  }
+  summary:hover {
+    background-color: var(--couleur-accent);
+    color: black;
+  }
+  details {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--rayon);
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  details[open] summary {
+    border-bottom: 1px solid #ccc;
+  }
+  .section {
+    margin-top: 3rem;
+  }
+  textarea, input[type="text"] {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.7rem;
+    border-radius: var(--rayon);
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+  }
+  label {
+    font-weight: 600;
+  }
+  .checkboxes {
+    margin-top: 1rem;
+  }
+  .checkboxes label {
+    margin-right: 1rem;
+    font-weight: 400;
+  }
+  .fichier-ref, .composante-ref {
+    font-size: 0.85rem;
+    color: #333;
+    background: var(--couleur-secondaire);
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--rayon);
+    margin: 3px;
+    display: inline-block;
+  }
+  .section p {
+    margin-bottom: 0.5rem;
+  }
+  .section textarea {
+    background-color: #fefefe;
+  }
